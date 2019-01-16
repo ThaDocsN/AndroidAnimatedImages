@@ -32,14 +32,25 @@ public class GifFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        imageView = container.findViewById(R.id.imageView);
-         //todo
+       return inflater.inflate(R.layout.fragment_gif, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        imageView = view.findViewById(R.id.imageView);
+        //todo
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     final Drawable drawable1 = ImageDecoder.decodeDrawable(ImageDecoder.createSource(getResources(), R.drawable.android_project));
-
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageView.setImageDrawable(drawable1);
+                        }
+                    });
                     if (drawable1 instanceof Animatable){
                         ((AnimatedImageDrawable)drawable1).start();
 
@@ -49,6 +60,5 @@ public class GifFragment extends Fragment {
                 }
             }
         }).start();
-       return inflater.inflate(R.layout.fragment_gif, container, false);
     }
 }
