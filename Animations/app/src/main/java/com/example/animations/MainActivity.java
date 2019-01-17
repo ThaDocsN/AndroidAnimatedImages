@@ -33,50 +33,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         addTabs(viewPager);
 
-       // final ImageView imageView = findViewById(R.id.animated_image_view);
-
-        // gif animation
-        /*new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    final Drawable drawable1 = ImageDecoder.decodeDrawable(ImageDecoder.createSource(getResources(), R.drawable.android_project));
-
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            imageView.setImageDrawable(drawable1);
-                        }
-                    });
-                    if (drawable1 instanceof Animatable){
-                        ((AnimatedImageDrawable)drawable1).start();
-
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();*/
-
-        // wolverine animation
-       /* imageView.setImageDrawable(getDrawable(R.drawable.animation_playground));
-        final Drawable drawable = imageView.getDrawable();
-        if (drawable instanceof Animatable){
-            ((Animatable)drawable).start();
-        }*/
-
-       //vector images
-     /* imageView.setImageDrawable(getDrawable(R.drawable.avd_anim));
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                imageView.setImageDrawable(getDrawable(R.drawable.avd_anim));
-                final Drawable drawable = imageView.getDrawable();
-                if (drawable instanceof Animatable) {
-                    ((Animatable) drawable).start();
-                }
-            }
-        });*/
     }
 
     private void addTabs(ViewPager viewPager) {

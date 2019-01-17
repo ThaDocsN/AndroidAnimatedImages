@@ -39,7 +39,7 @@ public class GifFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         imageView = view.findViewById(R.id.imageView);
-        //todo
+
         new Thread(new Runnable() {
             @Override
             public void run() {
